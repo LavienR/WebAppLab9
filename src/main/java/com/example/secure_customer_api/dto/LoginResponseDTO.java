@@ -2,8 +2,9 @@ package com.example.secure_customer_api.dto;
 
 public class LoginResponseDTO {
     
-    private String token;
-    private String type = "Bearer";
+    private String accessToken;
+    private String refreshToken;
+    private String tokenType = "Bearer";
     private String username;
     private String email;
     private String role;
@@ -11,28 +12,34 @@ public class LoginResponseDTO {
     public LoginResponseDTO() {
     }
     
-    public LoginResponseDTO(String token, String username, String email, String role) {
-        this.token = token;
+    public LoginResponseDTO(String accessToken, String refreshToken,
+                            String username, String email, String role) {
+        this.accessToken = accessToken;
+        this.refreshToken = refreshToken;
         this.username = username;
         this.email = email;
         this.role = role;
     }
     
     // Getters and Setters
-    public String getToken() {
-        return token;
+    public String getAccessToken() {
+        return accessToken;
     }
-    
-    public void setToken(String token) {
-        this.token = token;
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
-    
-    public String getType() {
-        return type;
+
+    public String getRefreshToken() {
+        return refreshToken;
     }
-    
-    public void setType(String type) {
-        this.type = type;
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    public String getTokenType() {
+        return tokenType;
     }
     
     public String getUsername() {
